@@ -1,3 +1,5 @@
+import undoable from './undoRedo';
+
 const todo = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_TODO':
@@ -10,7 +12,6 @@ const todo = (state = {}, action) => {
       if (state.id !== action.id) {
         return state;
       }
-
       return Object.assign({}, state, {
         completed: !state.completed
       })
@@ -37,4 +38,6 @@ const todos = (state = [], action) => {
   }
 }
 
-export default todos;
+const undoableTodos = undoable(todos);
+
+export default undoableTodos;

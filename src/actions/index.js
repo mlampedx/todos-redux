@@ -21,3 +21,15 @@ export const toggleTodo = (id) => {
     id
   }
 }
+
+export const undoAction = () => {
+  return {
+    type: 'UNDO'
+  }
+}
+
+export const redoAction = () => {
+  return {
+    type: 'REDO'
+  }
+}

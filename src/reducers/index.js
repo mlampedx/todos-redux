@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import todos from './todos';
+import undoableTodos from './todos';
 import visibilityFilter from './visibilityFilter';
 
 // combineReducers() generates a function that calls your reducers with the slices of state selected 
@@ -7,7 +7,7 @@ import visibilityFilter from './visibilityFilter';
 
 const todoApp = combineReducers({
   visibilityFilter,
-  todos
+  todos: undoableTodos
 })
 
 // Same as:
@@ -15,7 +15,8 @@ const todoApp = combineReducers({
 // function todoApp(state = {}, action) {
 //   return {
 //     visibilityFilter: visibilityFilter(state.visibilityFilter, action),
-//     todos: todos(state.todos, action)
+//     todos: todos(state.todos, action),
+//     undoable: undoable(state.undoable, action)
 //   }
 // }
 
