@@ -1,0 +1,38 @@
+p {
+  font-family: Arial;
+  font-size: 14px;
+}
+
+.app-bar {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.centered-elem {
+  display: flex;
+  justify-content: center;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.task {
+  display: flex;
+  height: 150px;
+  margin: 20px;
+  padding: 5px;
+  width: 150px;
+}
+
+.task-text {
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.submit-btn {
+  margin-left: 20px;
+}
