@@ -1,2 +1,2 @@
 # todos-redux
-Simple todos list application built using React and Redux.
+Task manager application built with React, Redux, Node.js, and Express.
