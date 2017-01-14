@@ -1,4 +1,6 @@
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
+// import { combineReducers } from 'seedux';
+import { combineReducers } from './../../../seedux';
 import undoableTodos from './todos';
 import visibilityFilter from './visibilityFilter';
 
