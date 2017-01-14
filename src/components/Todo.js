@@ -1,14 +1,17 @@
 import React, { PropTypes } from 'react';
+import Paper from 'material-ui/Paper';
 
 const Todo = ({ onClick, completed, text }) => (
-  <li
+  <Paper
+    className = 'task'
     onClick = {onClick}
+    zDepth = {2}
     style = {{
-      textDecoration: completed ? 'line-through' : 'none'
+      textDecoration: completed ? 'line-through' : 'none',
     }}
   >
-    {text}
-  </li>
+    <li className = 'task-text'>{text}</li>
+  </Paper>
 )
 
 Todo.propTypes = {
