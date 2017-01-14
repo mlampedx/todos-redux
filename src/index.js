@@ -1,9 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, dispatch, applyMiddleware, seeduxInit, dispatchLogger, bindActionCreators } from './../../seedux';
 import todoApp from './reducers/index';
 import App from './components/App';
+import * as todoActionCreators from './actions';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+require('./styles.css');
+// import { bindActionCreators } from 'seedux';
 
 // Redux devtools enabled
 
@@ -11,11 +15,16 @@ import App from './components/App';
 
 // Redux devtools disabled
 
-let store = createStore(todoApp);
+const reduxifyTest = bindActionCreators(todoActionCreators, dispatch);
+
+let store = createStore(todoApp, applyMiddleware(dispatchLogger));
+seeduxInit(store);
 
 render(
   <Provider store = { store }>
-    <App />
+    <MuiThemeProvider>
+      <App />
+    </MuiThemeProvider>
   </Provider>,
   document.getElementById('app')
 );
