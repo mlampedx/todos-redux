@@ -22,6 +22,7 @@ p {
 .task {
   display: flex;
   height: 150px;
+  justify-content: center;
   margin: 20px;
   padding: 5px;
   width: 150px;
@@ -29,7 +30,7 @@ p {
 
 .task-text {
   align-items: center;
-  justify-content: center;
+  display: flex;
   list-style: none;
 }
 
